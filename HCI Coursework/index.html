@@ -1,0 +1,85 @@
+<!DOCTYPE HMTL>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+  />
+  <link rel="stylesheet" href="styles.css">
+  <script src="fetch.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBt4p4j-d7cGEV_ILX8-TCmHr1NqcjgL3Q&callback=myMap"></script>
+  <title>Norwich Travel Info</title>
+</head>
+<!--this nav bar use bootstrap-->
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Norwich Travel Info</a>
+      </div>
+      <div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Bus</a>
+            </li>
+            <li>
+              <a href="trains.html">Trains</a>
+            </li>
+            <li>
+              <a href="aboutus.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <!--fun begin here-->
+    <br/>
+    <form>
+      <div class="form-group">
+        <label>Choose a stop</label>
+        <select class="form-control" id="mySelect">
+          <option value="2900N12240">City Center(Red Lion Street stop BK)</option>
+          <option value="2900N12150">City Center(Red Lion Street stop BM)</option>
+          <option value="2900C237">Norwich Hospital (Stand A)</option>
+          <option value="2900C238">Norwich Hospital (Stand B)</option>
+          <option value="2900N12216">Railway Station (Stop DE)</option>
+          <option value="2900N124">Railway Station (Stop DF)</option>
+          <option value="2900N12218">Railway Station (Stop DD)</option>
+          <option value="2900N12286">University of East Anglia (Stop A)</option>
+          <option value="2900N12913">University of East Anglia (Stop B)</option>
+          <option value="2900N12287">University of East Anglia (Stop C)</option>
+        </select>
+      </div>
+    </form>
+    <button id="submit" class="btn btn-primary btn-lg" onclick="clearBox();loadBus();myMap();">Get Next Buses</button>
+    <button class="btn btn-primary btn-lg" onclick="window.location.reload()">Clear Search</button>
+    <p>To make a new search, please click "Clear Search" button first</p>
+    <!--<button class="btn btn-primary btn-lg" onclick="getLocation()">Get nearest bus stops</button>-->
+
+    <!--load university bus stop buses-->
+    <p id="stop_name"></p>
+
+    <div class="container" id="businfo"></div>
+
+    <div id="businfo2"></div>
+
+    <div id="map" style="width:100%;height:75%"></div>
+
+
+
+  </div>
+</body>
+
+</html>
